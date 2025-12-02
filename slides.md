@@ -329,279 +329,12 @@ graph TB
 
 </div>
 
----
-layout: two-cols
----
-
-# 3. Traffic Lights
-
-<div class="text-sm">
-
-## The Problem
-
-<v-clicks>
-
-**The Challenge:**
-- Multiple traffic directions
-- Some can go together (safe)
-- Some will crash
-- Need minimum phases
-
-**Example:**
-- 🚗 North-South
-- 🚙 East-West
-- Conflicts: N-S vs E-W
-
-</v-clicks>
-
-</div>
-
-::right::
-
-<div v-click class="mt-2">
-
-<div class="text-sm">
-
-**Bad Approach:**
-- 8 directions = 8 phases
-- Each phase = 30 seconds
-- Total cycle = 4 minutes!
-- Cars wait forever 😫
-
-<div class="mt-3 p-2 bg-red-500 bg-opacity-10 rounded mb-2 text-xs">
-<b>❌ Too Many Phases:</b><br/>
-4 min cycle = long waits<br/>
-Traffic backs up for miles<br/>
-Wastes fuel and time
-</div>
-
-<div class="p-2 bg-green-500 bg-opacity-10 rounded mb-2 text-xs">
-<b>✅ Optimal Solution:</b><br/>
-Group non-conflicting movements<br/>
-Reduce to 2-3 phases<br/>
-1 minute cycle!
-</div>
-
-<div class="p-2 bg-blue-500 bg-opacity-10 rounded text-xs">
-<b>📊 The Math:</b><br/>
-Graph Coloring Problem<br/>
-Find minimum colors (phases) needed
-</div>
-
-</div>
-
-</div>
 
 ---
 layout: two-cols
 ---
 
-# 3. Traffic Lights
-
-<div class="text-sm">
-
-## The Solution
-
-<v-clicks>
-
-**Graph Coloring:**
-- Each direction = vertex
-- Conflicts = edges
-- Colors = phases
-- Find minimum colors
-
-**Example:**
-```
-Phase 1: N-S + N-left
-Phase 2: E-W + E-left
-Only 2 phases!
-```
-
-</v-clicks>
-
-</div>
-
-::right::
-
-<div v-click class="mt-2">
-
-<div class="text-sm">
-
-**Visual Representation:**
-
-```mermaid
-graph TD
-    A((N-S)) ---|conflict| B((E-W))
-    style A fill:#ef4444
-    style B fill:#3b82f6
-```
-
-<div class="mt-2 p-2 bg-blue-500 bg-opacity-10 rounded text-xs">
-<b>🎨 Solution:</b><br/>
-🔴 Red Phase: N-S traffic<br/>
-🔵 Blue Phase: E-W traffic<br/>
-Only 2 colors needed!
-</div>
-
-<div class="mt-2 p-2 bg-green-500 bg-opacity-10 rounded text-xs">
-<b>🌍 Real Impact:</b><br/>
-• 20-40% reduction in wait times<br/>
-• 15% less fuel consumption<br/>
-• 20% reduction in emissions<br/>
-• Saves millions of hours/year
-</div>
-
-</div>
-
-</div>
-
----
-layout: two-cols
----
-
-# 4. QR Codes
-
-<div class="text-sm">
-
-## The Problem
-
-<v-clicks>
-
-**The Challenge:**
-- QR codes get dirty, scratched
-- Regular data would be lost
-- But QR codes still work!
-
-**Why?**
-- Reed-Solomon Error Correction
-- Can recover from 30% damage
-
-**Example:**
-```
-Send: "HELLO"
-Damaged: "HE??O"
-Normal: Lost! ❌
-QR Code: Recovered! ✅
-```
-
-</v-clicks>
-
-</div>
-
-::right::
-
-<div v-click class="mt-2">
-
-<div class="text-sm">
-
-**Why This Matters:**
-
-<div class="p-2 bg-red-500 bg-opacity-10 rounded mb-2 text-xs">
-<b>❌ Without Error Correction:</b><br/>
-Data lost forever<br/>
-Can't scan damaged codes<br/>
-Must reprint everything
-</div>
-
-<div class="p-2 bg-green-500 bg-opacity-10 rounded mb-2 text-xs">
-<b>✅ With Error Correction:</b><br/>
-Math recovers missing data!<br/>
-Works with coffee stains ☕<br/>
-Works with scratches 🔑
-</div>
-
-<div class="p-2 bg-purple-500 bg-opacity-10 rounded mb-2 text-xs">
-<b>🎯 Protection Levels:</b><br/>
-Level L: 7% damage OK<br/>
-Level M: 15% damage OK<br/>
-Level Q: 25% damage OK<br/>
-Level H: 30% damage OK!
-</div>
-
-<div class="p-2 bg-blue-500 bg-opacity-10 rounded text-xs">
-<b>🚀 Also Used In:</b><br/>
-CDs, DVDs, Space probes, Satellite TV
-</div>
-
-</div>
-
-</div>
-
----
-layout: two-cols
----
-
-# 4. QR Codes
-
-<div class="text-sm">
-
-## The Solution
-
-<v-clicks>
-
-**How It Works:**
-- Add backup data
-- Use polynomial math
-- Can lose any 30% and recover!
-
-**Example:**
-```
-Message: "HELLO" (5 chars)
-Add 3 parity: "XYZ"
-Can lose ANY 3 chars!
-
-"H?L?O" + "XYZ" → "HELLO" ✓
-"??LLO" + "XYZ" → "HELLO" ✓
-"HELL?" + "XYZ" → "HELLO" ✓
-```
-
-</v-clicks>
-
-</div>
-
-::right::
-
-<div v-click class="mt-2">
-
-<div class="text-sm">
-
-**The Magic:**
-
-<div class="p-2 bg-blue-500 bg-opacity-10 rounded mb-2 text-xs">
-<b>� The Miath:</b><br/>
-Uses Galois Field arithmetic<br/>
-Polynomial interpolation<br/>
-Can mathematically "undo" damage!
-</div>
-
-<div class="p-2 bg-green-500 bg-opacity-10 rounded mb-2 text-xs">
-<b>✅ Amazing Result:</b><br/>
-30% of code can be damaged<br/>
-Still recovers 100% of data<br/>
-Works every time!
-</div>
-
-<div class="p-2 bg-purple-500 bg-opacity-10 rounded mb-2 text-xs">
-<b>🚀 Real World Uses:</b><br/>
-• CDs/DVDs (scratches don't matter!)<br/>
-• Voyager 1 & 2 space probes<br/>
-• Satellite TV broadcasts<br/>
-• Digital TV signals
-</div>
-
-<div class="p-2 bg-yellow-500 bg-opacity-10 rounded text-xs">
-<b>💡 Fun Fact:</b> You can cover 30% of a QR code with your thumb and it still scans!
-</div>
-
-</div>
-
-</div>
-
----
-layout: two-cols
----
-
-# 5. Image Compression
+# 3. Image Compression
 
 <div class="text-sm">
 
@@ -673,7 +406,7 @@ Store pattern once, not each pixel!
 layout: two-cols
 ---
 
-# 5. Image Compression
+# 3. Image Compression
 
 <div class="text-sm">
 
@@ -750,7 +483,7 @@ Grass = thousands of green pixels
 layout: two-cols
 ---
 
-# 6. Package Delivery
+# 4. Package Delivery
 
 <div class="text-sm">
 
@@ -820,7 +553,7 @@ Good enough!
 layout: two-cols
 ---
 
-# 6. Package Delivery
+# 4. Package Delivery
 
 <div class="text-sm">
 
