@@ -1,5 +1,5 @@
 ---
-theme: default
+theme: seriph
 background: https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1920
 class: text-center
 highlighter: shiki
@@ -18,10 +18,26 @@ mdc: true
 
 Beyond Theory: Where Discrete Math Powers Our World
 
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
+<div class="pt-12 grid grid-cols-2 gap-8">
+  <div class="text-left">
+    <div class="text-xl mb-4">
+      <b>Presented to:</b>
+    </div>
+    <div class="text-lg">
+      Prof. Vijay Kumar Vyas
+    </div>
+  </div>
+  <div class="text-left">
+    <div class="text-xl mb-4">
+      <b>Presented by:</b>
+    </div>
+    <div class="text-lg">
+      Akshay Kumar Sharma<br/>
+      Devansh Singh Rajawat<br/>
+      Akshat Sharma<br/>
+      Abhimanu Chaturvedi
+    </div>
+  </div>
 </div>
 
 ---
@@ -892,6 +908,4 @@ class: text-center
 <b>Discrete Mathematics in Action</b>
 </div>
 
-<div class="text-2xl">
-Questions?
-</div>
+
